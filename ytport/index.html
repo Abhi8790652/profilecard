@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css">
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav>
+        <div class="logo">
+            <h2><span>ABHINIT_WEBDEV</span></h2>
+        </div>
+        <ul id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skill">Skill</a></li>
+            <li><a href="2025port">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class='bx bx-menu'></i>
+        </div>
+    </nav>
+
+    <!-- hero section -->
+
+    <div id="home" class="hero-section">
+        <div class="left-section">
+            <h1>Hi I'm ABHINIT</h1>
+            <h2>And I'm <span id="element"></span></h2>
+            <p>I create cool websites that look awesome and are easy to use. Let's make something amazing together!</p>
+            <div class="btn-box">
+                <button class="btn">Download CV</button>
+            </div>
+            <div class="social-icons">
+                <i class='bx bxs-envelope'></i>
+                <i class='bx bxl-linkedin-square' ></i>
+                <i class='bx bxl-github' ></i>
+            </div>
+        </div>
+        <div class="right-section">
+            <img src="circular_image.png" alt="">
+        </div>
+    </div>
+
+    <!-- about section -->
+
+    <div id="about" class="about-section">
+        <h1><span>About Me</span></h1>
+        <h2>Experienced Web Developer</h2>
+        <p>I'm a dedicated web developer with over five years of experience in building responsive and user-friendly websites. My expertise includes HTML, CSS, JavaScript, and various frameworks.</p>
+        <a href="2025port" class="btn">View Portfolio</a>
+    </div>
+
+    <!-- skill section -->
+
+    <div id="skill" class="skill-container">
+        <div class="left-section">
+            <img src="images/html-5.png" alt="">
+            <img src="images/css-3.png" alt="">
+            <img src="images/js.png" alt="">
+            <img src="images/bootstrap.png" alt="">
+            <img src="images/tailwind.png" alt="">
+            <img src="images/react.png" alt="">
+            <img src="images/node-js.png" alt="">
+            <img src="images/mongodb.png" alt="">
+            <img src="images/MUI.png" alt="">
+        </div>
+        <div class="right-section">
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="skill-name-box">
+                        <h4>HTML</h4>
+                        <h4>72%</h4>
+                    </div>
+                    <div class="line-background">
+                        <div class="line html"></div>
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="skill-name-box">
+                        <h4>CSS</h4>
+                        <h4>64%</h4>
+                    </div>
+                    <div class="line-background">
+                        <div class="line css"></div>
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="skill-name-box">
+                        <h4>JavaScript</h4>
+                        <h4>82%</h4>
+                    </div>
+                    <div class="line-background">
+                        <div class="line javascript"></div>
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="skill-name-box">
+                        <h4>REACT</h4>
+                        <h4>92%</h4>
+                    </div>
+                    <div class="line-background">
+                        <div class="line react"></div>
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="skill-name-box">
+                        <h4>Node Js</h4>
+                        <h4>50%</h4>
+                    </div>
+                    <div class="line-background">
+                        <div class="line nodejs"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- portfolio section -->
+
+    <div id="portfolio" class="portfolio-section">
+        <h2>My <span>Portfolio</span></h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/portfolio1.jpg" alt="">
+                <div class="layer"></div>
+                <div class="icon">
+                    <i class='bx bx-link-external' ></i>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/portfolio2.jpg" alt="">
+                <div class="layer"></div>
+                <div class="icon">
+                    <i class='bx bx-link-external' ></i>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/portfolio3.jpg" alt="">
+                <div class="layer"></div>
+                <div class="icon">
+                    <i class='bx bx-link-external' ></i>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/portfolio3.jpg" alt="">
+                <div class="layer"></div>
+                <div class="icon">
+                    <i class='bx bx-link-external' ></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- contact section -->
+
+    <div id="contact" class="contact-section">
+        <h1><span>Contact</span> Us</h1>
+        <form>
+            <input type="text" name="" placeholder="Name" id="">
+            <input type="email" name="" placeholder="Email" id="">
+            <textarea name="" id="" placeholder="Subject"></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+
+    <!-- footer -->
+
+    <footer>
+        <p><i class='bx bxs-copyright' ></i> Copyright free 2025 by AK</p>
+    </footer>
+
+    <!-- scroll to top button -->
+
+    <button id="backToTopBtn"onclick="scrollToTop()"><i class='bx bx-chevron-up'></i></button>
+
+    <!-- script tags -->
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        let navLinks = document.querySelector('#navLinks')
+        let menuIcon = document.querySelector('.menu-icon')
+        navLinks.style.maxHeight = '0px'
+        menuIcon.addEventListener('click', () => {
+            if (navLinks.style.maxHeight === '0px') {
+                navLinks.style.maxHeight = '380px';
+            }
+            else {
+                navLinks.style.maxHeight = '0px';
+            }
+        })
+
+        // typing js
+        var typed = new Typed('#element', {
+            strings: ['Frontend Developer', 'Backend Developer',' Youtuber', 'Freelancer'],
+            typeSpeed: 80,
+            backSpeed: 60,
+            loop: true,
+        });
+
+        let backToTopBtn = document.querySelector('#backToTopBtn')
+        window.onscroll = function () {
+            scroollBtn();
+        }
+
+        function scroollBtn(){
+            if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = 'block';
+            }
+            else{
+                backToTopBtn.style.display = 'none';
+            }
+        }
+
+        function scrollToTop(){
+           window.scrollTo({
+            top : '0'
+           })
+        }
+    </script>
+
+</body>
+
+</html>

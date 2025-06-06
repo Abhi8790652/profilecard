@@ -1,0 +1,285 @@
+/* General Styles */
+.body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: linear-gradient(135deg, #1e1e1e, #333);
+    padding: 15px;
+    transition: background 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #f39c12 !important;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    padding: 10px;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f39c12 !important;
+    text-decoration: underline;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #121212;
+    color: #fff;
+}
+
+.dark-mode .navbar {
+    background: #222 !important;
+}
+
+.dark-mode .navbar-nav .nav-link {
+    color: #ddd !important;
+}
+
+.dark-mode .navbar-nav .nav-link:hover {
+    color: #f39c12 !important;
+}
+
+/* Dark Mode Button */
+#darkModeToggle {
+    font-size: 1.2rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#darkModeToggle:hover {
+    transform: rotate(20deg);
+    background: #f39c12;
+    color: white;
+}
+
+/* Content Section */
+.content {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.footer {
+    background-color: #112240;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #1E293B;
+    color: rgb(255, 255, 255);
+}
+/* Animations */
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+}
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.hero {
+    background: url('my\ photo.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    transition: background-size 0.5s ease;
+}
+
+/* Hover effect to scale the background */
+.hero:hover {
+    background-size: 110%;
+     /* Zoom in the image */
+}
+
+/* Add a dark overlay to improve text visibility */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+/* Ensures text is visible */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+#about:hover {
+    background-color: #334E68; /* Darker background for hover */
+    color: #FFDD57; /* Change text color */
+    transform: translateY(-5px); /* Slight lift on hover */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+/* Blog Image Styling */
+#blog img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* Ensures the image covers the space */
+    border-radius: 10px; /* Optional: Round the corners of the image */
+}
+
+/* Card Hover Effect */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px; /* Optional: Round the card corners */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slight lift */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Card Image Styling */
+.card-img-top {
+    height: 200px;
+    object-fit: cover; /* Ensures the image fits inside the card */
+    border-radius: 10px 10px 0 0; /* Optional: Round the card image corners */
+}
+
+/* Button Hover Effect */
+.btn-primary {
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darken the button on hover */
+}
+/* Social Media Section */
+#social-media {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    border-radius: 8px;
+}
+
+#social-media .social-links {
+    margin-top: 20px;
+}
+
+#social-media .social-icon {
+    margin: 0 15px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+#social-media .social-icon:hover {
+    transform: scale(1.2);
+}
+.text-center mb-4{
+    hover: auto;
+}
+/* Skills Section */
+/* Skills Section */
+#skills {
+    background-color: #001F3F; /* Dark Blue */
+    padding: 50px 20px;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Skill Box */
+.skill {
+    text-align: center;
+    width: 150px;
+}
+
+/* Circular Progress Bars */
+.progress-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(#FFD700 0% 0%, rgba(255, 255, 255, 0.2) 0% 100%);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Cool Hover Animation */
+.progress-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.7);
+}
+
+/* Progress Percentage */
+.percentage {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+
+/* Skill Icons */
+.skill-icon {
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Custom Colors */
+.progress-circle[data-percent="90"] { background: conic-gradient(#E34F26 90%, rgba(255, 255, 255, 0.2) 0% 100%); } /* HTML */
+.progress-circle[data-percent="85"] { background: conic-gradient(#2965F1 85%, rgba(255, 255, 255, 0.2) 0% 100%); } /* CSS */
+.progress-circle[data-percent="80"] { background: conic-gradient(#F7DF1E 80%, rgba(255, 255, 255, 0.2) 0% 100%); color: black; } /* JS */
+.progress-circle[data-percent="75"] { background: conic-gradient(#61DAFB 75%, rgba(255, 255, 255, 0.2) 0% 100%); } /* React */
+.progress-circle[data-percent="70"] { background: conic-gradient(#68A063 70%, rgba(255, 255, 255, 0.2) 0% 100%); } /* Node */
+.progress-circle[data-percent="85"] { background: conic-gradient(#3776AB 85%, rgba(255, 255, 255, 0.2) 0% 100%); } /* Python */
+
+

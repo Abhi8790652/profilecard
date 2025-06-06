@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Image Resizer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="upload-box" id="uploadBox">
+            <img src="th.jpg" alt="Preview" id="previewImage">
+            <p>Tap to upload or drag & drop</p>
+            <input type="file" id="fileInput" accept="image/*" hidden>
+        </div>
+        <div class="content">
+            <div class="file-info">
+                <div class="size-info">
+                    <span>Original Size:</span>
+                    <span id="originalSize" class="size-value">0 KB</span>
+                </div>
+                <div class="size-info">
+                    <span>Current Size:</span>
+                    <span id="currentSize" class="size-value">0 KB</span>
+                </div>
+                <div class="size-info">
+                    <span>Size Reduction:</span>
+                    <span id="reduction" class="size-value">0% smaller</span>
+                </div>
+            </div>
+            <div class="row size-inputs">
+                <div class="column width">
+                    <label for="width">Width (px)</label>
+                    <input type="number" id="width" min="1" placeholder="Enter width" inputmode="numeric">
+                </div>
+                <div class="column height">
+                    <label for="height">Height (px)</label>
+                    <input type="number" id="height" min="1" placeholder="Enter height" inputmode="numeric">
+                </div>
+            </div>
+            <div class="format-section">
+                <label>Output Format:</label>
+                <div class="format-options">
+                    <div class="format-option">
+                        <input type="radio" id="format-jpg" name="format" value="jpg" checked>
+                        <label for="format-jpg">JPG</label>
+                    </div>
+                    <div class="format-option">
+                        <input type="radio" id="format-png" name="format" value="png">
+                        <label for="format-png">PNG</label>
+                    </div>
+                    <div class="format-option">
+                        <input type="radio" id="format-pdf" name="format" value="pdf">
+                        <label for="format-pdf">PDF</label>
+                    </div>
+                </div>
+                <div class="format-info">
+                    <small id="formatDescription">JPG: Best for photographs, smaller file size</small>
+                </div>
+            </div>
+            <div class="row options">
+                <div class="column">
+                    <div class="option">
+                        <input type="checkbox" id="ratio" checked>
+                        <label for="ratio">Maintain aspect ratio</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="quality">
+                        <label for="quality">image quality</label>
+                    </div>
+                </div>
+            </div>
+            <div class="quality-control" id="qualityControl" style="display: none;">
+                <div class="quality-header">
+                    <label for="qualitySlider">Image Quality: <span id="qualityValue">80%</span></label>
+                    <div class="quality-info-icon" title="Click for more information">ℹ️</div>
+                </div>
+                <div class="quality-presets">
+                    <button class="quality-preset" data-quality="100" title="Best quality, largest file size">
+                        <span class="preset-label">High</span>
+                        <span class="preset-size">100%</span>
+                    </button>
+                    <button class="quality-preset" data-quality="80" title="Good balance of quality and size">
+                        <span class="preset-label">Medium</span>
+                        <span class="preset-size">80%</span>
+                    </button>
+                    <button class="quality-preset" data-quality="60" title="Smaller size, noticeable quality loss">
+                        <span class="preset-label">Low</span>
+                        <span class="preset-size">60%</span>
+                    </button>
+                    <button class="quality-preset" data-quality="40" title="Smallest size, significant quality loss">
+                        <span class="preset-label">Very Low</span>
+                        <span class="preset-size">40%</span>
+                    </button>
+                </div>
+                <input type="range" id="qualitySlider" min="1" max="100" value="80" class="quality-slider">
+                <div class="quality-description">
+                    <small id="qualityDescription">Medium quality - Good balance between size and quality</small>
+                    <div class="quality-tips" id="qualityTips" style="display: none;">
+                        <h4>Quality Tips:</h4>
+                        <ul>
+                            <li>Use High (100%) for important photos and documents</li>
+                            <li>Use Medium (80%) for general purpose images</li>
+                            <li>Use Low (60%) for web images and thumbnails</li>
+                            <li>Use Very Low (40%) for maximum compression</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="target-size">
+                <label for="targetSize">Target Size (KB)</label>
+                <input type="number" id="targetSize" min="1" placeholder="Enter target size in KB" inputmode="numeric">
+                <button id="optimizeBtn" class="optimize-btn">Optimize to Target Size</button>
+            </div>
+            <button class="download-btn" id="downloadBtn" disabled>Download</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

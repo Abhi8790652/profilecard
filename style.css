@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 380px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.container.dark-mode {
+    background-color: rgba(45, 45, 45, 0.95);
+    color: white;
+}
+
+.header_section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+.icon, .icon2 {
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #667eea;
+    padding: 8px;
+    border-radius: 50%;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.icon:hover, .icon2:hover {
+    transform: scale(1.1) rotate(5deg);
+    background: rgba(102, 126, 234, 0.2);
+}
+
+.dark-mode .icon, .dark-mode .icon2 {
+    color: #8a9eff;
+    background: rgba(138, 158, 255, 0.1);
+}
+
+.dark-mode .icon:hover, .dark-mode .icon2:hover {
+    background: rgba(138, 158, 255, 0.2);
+}
+
+/* Add animation for the moon icon when dark mode is active */
+.dark-mode .icon2 {
+    transform: rotate(180deg);
+}
+
+/* Add menu animation */
+.icon {
+    position: relative;
+}
+
+.icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(102, 126, 234, 0.1);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.icon:hover::after {
+    transform: scale(1.5);
+    opacity: 0;
+}
+
+.image_section {
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.image_section::before {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0.5;
+}
+
+.image_section img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.dark-mode .image_section img {
+    border-color: #2d2d2d;
+}
+
+.info_section {
+    text-align: center;
+}
+
+.info_section h2 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.dark-mode .info_section h2 {
+    color: #fff;
+}
+
+.info_section p {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.dark-mode .info_section p {
+    color: #ccc;
+}
+
+.social-links {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    display: inline-block;
+    padding: 8px 16px;
+    color: #667eea;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    background: rgba(102, 126, 234, 0.1);
+    font-weight: 500;
+}
+
+.social-icon:hover {
+    color: white;
+    background: #667eea;
+    transform: translateY(-2px);
+}
+
+.profile_link {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.profile_link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.greeting {
+    font-size: 1.3em;
+    color: #667eea;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.dark-mode .greeting {
+    color: #8a9eff;
+}
+
+.views-counter {
+    margin-top: 20px;
+    font-size: 0.95em;
+    color: #666;
+    padding: 8px 16px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.dark-mode .views-counter {
+    color: #ccc;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Menu Styles */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-overlay.active {
+    display: flex;
+}
+
+.menu-content {
+    background: white;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.menu-overlay.active .menu-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.menu-header h3 {
+    color: #333;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.close-menu {
+    font-size: 1.2rem;
+    color: #666;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.close-menu:hover {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    transform: rotate(90deg);
+}
+
+.menu-section {
+    margin-bottom: 20px;
+}
+
+.menu-section h4 {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu-link i {
+    margin-right: 12px;
+    font-size: 1.1em;
+    color: #667eea;
+    width: 20px;
+    text-align: center;
+}
+
+.menu-link:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateX(5px);
+}
+
+/* Dark mode styles for menu */
+.dark-mode .menu-content {
+    background: #2d2d2d;
+}
+
+.dark-mode .menu-header h3 {
+    color: #fff;
+}
+
+.dark-mode .menu-section h4 {
+    color: #ccc;
+}
+
+.dark-mode .menu-link {
+    color: #fff;
+}
+
+.dark-mode .menu-link:hover {
+    background: rgba(138, 158, 255, 0.1);
+}
+
+.dark-mode .close-menu {
+    color: #ccc;
+}
+
+.dark-mode .close-menu:hover {
+    background: rgba(138, 158, 255, 0.1);
+    color: #8a9eff;
+}

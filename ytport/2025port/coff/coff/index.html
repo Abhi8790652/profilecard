@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css"
+      integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="logo.png" alt="" />
+        </div>
+        <ul id="navMenu">
+            <i class='bx bx-x closeIcon' id="closeMenu" ></i>
+          <li>Home</li>
+          <li>about us</li>
+          <li>products</li>
+          <li>customers</li>
+        </ul>
+        <div class="icons">
+          <div class="cart-container">
+            <i class="bx bx-cart" id="cartIcon"></i>
+            <span class="cart-badge" id="cartCount">0</span>
+          </div>
+          <i class="bx bx-search-alt-2"></i>
+          <i class='bx bx-menu menuIcon' id="openMenu" ></i>
+        </div>
+      </nav>
+
+      <!-- Cart Overlay -->
+      <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-sidebar">
+          <h2>Your Cart</h2>
+          <ul id="cartItems"></ul>
+          <div class="cart-total">Total: ₹<span id="cartTotal">0.00</span></div>
+          <button id="checkoutBtn">Checkout</button>
+          <button id="closeCart">Close</button>
+        </div>
+      </div>
+
+      <!-- main section --- hero -->
+
+      <main>
+        <div class="daily-special" id="dailySpecial"></div>
+        <div class="product-menu" id="productMenu"></div>
+      </main>
+    </header>
+  </body>
+
+  
+</html>

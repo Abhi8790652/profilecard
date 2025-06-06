@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM System Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #2d2d2d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #ccc;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .project-info {
+            margin-bottom: 30px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .project-info h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .project-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card i {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        .code-section {
+            background: #2d2d2d;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .code-header {
+            background: #1a1a1a;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .code-header h3 {
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .code-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .code-actions button {
+            background: #333;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .code-actions button:hover {
+            background: #444;
+        }
+
+        pre {
+            margin: 0 !important;
+            border-radius: 0 !important;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ATM System Project</h1>
+            <p>A C++ implementation of an ATM and Bank Management System</p>
+        </div>
+        
+        <div class="content">
+            <div class="project-info">
+                <h2>Project Overview</h2>
+                <p>This is a comprehensive ATM and Bank Management System implemented in C++. The system provides both ATM and Bank Management functionalities, allowing users to perform various banking operations.</p>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-user-plus"></i>
+                    <h3>User Management</h3>
+                    <p>Create new accounts, manage user records, and handle user authentication.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>ATM Operations</h3>
+                    <p>Check balance, deposit money, withdraw funds, and transfer money between accounts.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cog"></i>
+                    <h3>Bank Management</h3>
+                    <p>Comprehensive bank management system with admin controls and user record management.</p>
+                </div>
+            </div>
+
+            <div class="code-section">
+                <div class="code-header">
+                    <h3>Source Code</h3>
+                    <div class="code-actions">
+                        <button onclick="copyCode()">Copy Code</button>
+                    </div>
+                </div>
+                <pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;conio.h&gt;
+#include&lt;fstream&gt;
+#include&lt;windows.h&gt;
+using namespace std;
+
+class bank {
+    private:
+    string name, address, phone, email,id, pass;
+    int pin;
+    float balance;
+
+public:
+    void menu();
+    void bank_management();
+    void atm_management();
+    void new_user();
+};
+
+void bank::new_user() {
+    ofstream file;
+    file.open("users.txt", ios::app);
+    cout &lt;&lt; "Enter Name: ";
+    cin &gt;&gt; name;
+    cout &lt;&lt; "Enter Address: ";
+    cin &gt;&gt; address;
+    cout &lt;&lt; "Enter Phone: ";
+    cin &gt;&gt; phone;
+    cout &lt;&lt; "Enter Email: ";
+    cin &gt;&gt; email;
+    cout &lt;&lt; "Set PIN: ";
+    cin &gt;&gt; pin;
+    balance = 0; // Default balance for a new user
+
+    file &lt;&lt; name &lt;&lt; " " &lt;&lt; address &lt;&lt; " " &lt;&lt; phone &lt;&lt; " " &lt;&lt; email &lt;&lt; " " &lt;&lt; pin &lt;&lt; " " &lt;&lt; balance &lt;&lt; "\n";
+    file.close();
+    cout &lt;&lt; "\nUser registered successfully!";
+}
+
+void bank::menu() {
+    char ch;
+    string pin = "13366", pass, email;
+    int choice;
+    
+    while (true) {
+        system("cls");
+        cout &lt;&lt; "\n\n\t\t\tControl Panel";
+        cout &lt;&lt; "\n\n 1. Bank Management ";
+        cout &lt;&lt; "\n 2. ATM Management";
+        cout &lt;&lt; "\n 3. Exit";
+        cout &lt;&lt; "\n\n Enter your choice: ";
+        cin &gt;&gt; choice;
+
+        switch (choice) {
+            case 1:
+                system("cls");
+                cout &lt;&lt; "\n\n\t\t\tLogin Account";
+                cout &lt;&lt; "\n\n E-mail: ";
+                cin &gt;&gt; email;
+                cout &lt;&lt; "\n\n\t\t\tPin Code: ";
+                for (int i = 0; i &lt; 5; i++) {
+                    ch = getch();
+                    pass += ch;
+                    cout &lt;&lt; "*";
+                }
+                if (email == "ak0978096@gmail.com" && pass == "14366") {
+                    bank_management();
+                } else {
+                    cout &lt;&lt; "\n\n Your email or pin is wrong";
+                }
+                break;
+            case 2:
+                atm_management();
+                break;
+            case 3:
+                exit(0);
+            default:
+                cout &lt;&lt; "Invalid choice, please try again";
+                getch();
+                break;
+        }
+    }
+}
+
+void bank::bank_management() {
+    system("cls");
+    cout &lt;&lt; "\n\n\t\t\tBank Management System";
+    cout &lt;&lt; "\n\n 1. New User";
+    cout &lt;&lt; "\n 2. Already User";
+    cout &lt;&lt; "\n 3. Withdraw Money";
+    cout &lt;&lt; "\n 4. Transfer Money";
+    cout &lt;&lt; "\n 5. Payment Option";
+    cout &lt;&lt; "\n 6. Search User Record";
+    cout &lt;&lt; "\n 7. Edit User Record";
+    cout &lt;&lt; "\n 8. Delete User Record";
+    cout &lt;&lt; "\n 9. Show All Records";
+    cout &lt;&lt; "\n 10. Back to Main Menu";
+    cout &lt;&lt; "\n\n Enter your choice: ";
+    int choice;
+    cin &gt;&gt; choice;
+
+    switch (choice) {
+        case 1:
+            // Logic for new user
+            break;
+        case 2: 
+            // Logic for existing user
+            break;
+        // Add cases for other options
+        case 10:
+            menu();
+            break;
+        default:
+            cout &lt;&lt; "Invalid choice, please try again";
+            getch();
+            bank_management();
+            break;
+    }
+}
+
+void bank::atm_management() {
+    system("cls");
+    cout &lt;&lt; "\n\n\t\t\tATM Management System";
+    cout &lt;&lt; "\n\n 1. Check Balance";
+    cout &lt;&lt; "\n 2. Deposit Money";
+    cout &lt;&lt; "\n 3. Withdraw Money";
+    cout &lt;&lt; "\n 4. Transfer Money";
+    cout &lt;&lt; "\n 5. Back to Main Menu";
+    cout &lt;&lt; "\n\n Enter your choice: ";
+    int choice;
+    cin &gt;&gt; choice;
+
+    switch (choice) {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 5:
+            menu();
+            break;
+        default:
+            cout &lt;&lt; "Invalid choice, please try again";
+            getch();
+            atm_management();
+            break; 
+    }
+}
+
+int main() {
+    bank opj;
+    opj.menu();}</code></pre>
+            </div>
+
+            <a href="../../index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Profile
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+    <script>
+        function copyCode() {
+            const code = document.querySelector('pre code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Code copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html> 
