@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinit Kumar – Resume | Software Engineer (New Grad)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #2563eb;
+            --text: #0f172a;
+            --muted: #475569;
+            --light-bg: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #0f172a;
+            color: var(--text);
+            line-height: 1.5;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        /* Top Action Bar */
+        .resume-actions {
+            max-width: 850px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1e293b;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .action-title {
+            color: #f8fafc;
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex; align-items: center; gap: .5rem;
+        }
+
+        .action-btns {
+            display: flex; gap: .75rem;
+        }
+
+        .btn-act {
+            display: inline-flex; align-items: center; gap: .4rem;
+            padding: .5rem 1rem;
+            border-radius: 8px;
+            font-size: .875rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all .2s;
+            border: none;
+        }
+
+        .btn-primary { background: #2563eb; color: #fff; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary { background: #334155; color: #f8fafc; border: 1px solid #475569; }
+        .btn-secondary:hover { background: #475569; }
+
+        /* Paper Resume Container */
+        .resume-paper {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 2.5rem 3rem;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            color: var(--text);
+        }
+
+        /* Header */
+        .resume-header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .headline {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: .2rem;
+            margin-bottom: .6rem;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: .8rem 1.2rem;
+            font-size: .875rem;
+            color: var(--muted);
+        }
+
+        .contact-row a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-row a:hover { text-decoration: underline; }
+
+        /* Sections */
+        .section {
+            margin-bottom: 1.4rem;
+        }
+
+        .section-title {
+            font-size: .95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--primary);
+            border-bottom: 1.5px solid var(--border);
+            padding-bottom: .25rem;
+            margin-bottom: .75rem;
+        }
+
+        .summary-text {
+            font-size: .9rem;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        /* Technical Skills */
+        .skills-table {
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+            font-size: .885rem;
+        }
+
+        .skill-row {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: .5rem;
+        }
+
+        .skill-label {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .skill-value {
+            color: #334155;
+        }
+
+        /* Items (Projects, Experience, Education) */
+        .item {
+            margin-bottom: 1rem;
+        }
+
+        .item:last-child { margin-bottom: 0; }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: .25rem;
+        }
+
+        .item-title {
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .item-title span {
+            font-weight: 500;
+            color: var(--accent);
+            font-size: .875rem;
+        }
+
+        .item-date {
+            font-size: .825rem;
+            font-weight: 600;
+            color: var(--muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .item-sub {
+            font-size: .875rem;
+            font-weight: 600;
+            color: var(--muted);
+            margin-bottom: .35rem;
+        }
+
+        .item-bullets {
+            list-style: disc;
+            padding-left: 1.2rem;
+            font-size: .885rem;
+            color: #334155;
+        }
+
+        .item-bullets li {
+            margin-bottom: .25rem;
+            line-height: 1.5;
+        }
+
+        /* Coursework / Badges */
+        .coursework-text {
+            font-size: .885rem;
+            color: #334155;
+            margin-top: .25rem;
+        }
+
+        /* Print Media Query */
+        @media print {
+            body { background: #fff; padding: 0; color: #000; }
+            .resume-actions { display: none !important; }
+            .resume-paper {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            a { color: #000 !important; text-decoration: none !important; }
+            .section { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Action Bar -->
+    <div class="resume-actions">
+        <div class="action-title">
+            <i class="fas fa-file-pdf"></i> Abhinit Kumar – Resume
+        </div>
+        <div class="action-btns">
+            <a href="index.html" class="btn-act btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            <button class="btn-act btn-primary" onclick="window.print()">
+                <i class="fas fa-print"></i> Print / Save as PDF
+            </button>
+        </div>
+    </div>
+
+    <!-- Printable Resume Paper -->
+    <main class="resume-paper">
+        <!-- Header -->
+        <header class="resume-header">
+            <h1 class="name">Abhinit Kumar</h1>
+            <p class="headline">Software Engineer (New Grad) | Full-Stack Developer</p>
+            <div class="contact-row">
+                <span><i class="fas fa-phone"></i> +91-6202058658</span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:ak0978096@gmail.com">ak0978096@gmail.com</a></span>
+                <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/abhinit-kumar-406917220/" target="_blank">LinkedIn</a></span>
+                <span><i class="fab fa-github"></i> <a href="https://github.com/Abhi8790652" target="_blank">GitHub</a></span>
+                <span><i class="fas fa-globe"></i> <a href="index.html">Portfolio</a></span>
+                <span><i class="fas fa-map-marker-alt"></i> West Bengal, India</span>
+            </div>
+        </header>
+
+        <!-- Summary -->
+        <section class="section">
+            <h2 class="section-title">Summary</h2>
+            <p class="summary-text">
+                B.Tech Information Technology student (GPA 7.8/10, graduating 2027) building full-stack web applications with JavaScript, React, Next.js, Node.js, Express, MongoDB and Firebase. Built a real-time app used daily by 50+ students and developed REST API-driven workflow platforms and automation tools. Strong in DSA, OOP, DBMS and problem solving (130+ LeetCode, 160+ GeeksforGeeks problems). Seeking a Software Engineer, New Grad role.
+            </p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-table">
+                <div class="skill-row">
+                    <span class="skill-label">Languages:</span>
+                    <span class="skill-value">Java, JavaScript, Python, C++, C, HTML, CSS</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Frontend:</span>
+                    <span class="skill-value">React, Next.js, Tailwind CSS, Progressive Web Apps (PWA), responsive UI</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Backend &amp; APIs:</span>
+                    <span class="skill-value">Node.js, Express, REST APIs, Firebase Authentication, Google Apps Script</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Databases:</span>
+                    <span class="skill-value">Relational database concepts (DBMS), MongoDB, Mongoose, MongoDB Atlas, Cloud Firestore</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Fundamentals:</span>
+                    <span class="skill-value">Data Structures &amp; Algorithms, Object-Oriented Programming (OOP), Operating Systems, Computer Networks, System Modeling</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Tools &amp; Platforms:</span>
+                    <span class="skill-value">Git, GitHub, VS Code, npm, Flutter, Notion</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="item">
+                <div class="item-header">
+                    <h3 class="item-title">Hostel Meal ON/OFF Tracker <span>| React, JavaScript, Firebase Auth, Cloud Firestore, PWA</span></h3>
+                </div>
+                <ul class="item-bullets">
+                    <li>Built a real-time full-stack meal tracking web app with Firebase Authentication and Cloud Firestore, used daily by 50+ hostel students.</li>
+                    <li>Automated ON/OFF meal logging across 3 daily sessions, reducing manual effort by approximately 80%.</li>
+                    <li>Implemented a status dashboard, push notifications, PWA offline support and dark mode.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <h3 class="item-title">LoanFlow / Zetheta WorkBridge <span>| Next.js, Node.js, Express, MongoDB, Mongoose, REST APIs</span></h3>
+                </div>
+                <ul class="item-bullets">
+                    <li>Developed a web-based loan/workflow platform with a Next.js frontend and an Express/Node.js REST API backend.</li>
+                    <li>Integrated frontend with backend APIs and connected MongoDB via Mongoose for data handling; configured deployment settings.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <h3 class="item-title">Digital Twin – Water Tank Level Simulation <span>| Software Simulation, System Modeling (Ongoing)</span></h3>
+                </div>
+                <ul class="item-bullets">
+                    <li>Developing a software-only Digital Twin modeling the state and behavior of a water-tank system.</li>
+                    <li>Implementing virtual system-state representation, level monitoring, state updates and visualization with real-time-style monitoring.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <h3 class="item-title">Bank &amp; ATM Management System <span>| C++, OOP, File Handling</span></h3>
+                </div>
+                <ul class="item-bullets">
+                    <li>Developed a file-based CLI banking application in C++ with account registration, deposits, withdrawals and money transfers.</li>
+                    <li>Applied OOP and file handling to model banking operations; added password protection/encryption.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+            <h2 class="section-title">Experience</h2>
+            <div class="item">
+                <div class="item-header">
+                    <h3 class="item-title">Campus Project Developer – Automation Tools</h3>
+                    <span class="item-date">01/2025 – Present</span>
+                </div>
+                <div class="item-sub">University of Kalyani &middot; West Bengal, India</div>
+                <ul class="item-bullets">
+                    <li>Developed an HTML Forms + Google Sheets workflow system tracking hostel meal ON/OFF logs for 60+ students.</li>
+                    <li>Implemented Google Apps Script automation for real-time dashboard updates and session-level meal summaries, reducing manual work.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="item">
+                <div class="item-header">
+                    <h3 class="item-title">B.Tech, Information Technology</h3>
+                    <span class="item-date">08/2023 – 05/2027 (Expected)</span>
+                </div>
+                <div class="item-sub">University of Kalyani, West Bengal &middot; GPA: 7.8 / 10</div>
+                <p class="coursework-text"><strong>Relevant Coursework:</strong> Data Structures &amp; Algorithms, OOP in C++, DBMS, Operating Systems, Computer Networks, Web Development, Discrete Mathematics</p>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section class="section">
+            <h2 class="section-title">Achievements</h2>
+            <ul class="item-bullets">
+                <li><strong>Ongoing DSA Practice:</strong> Solved 130+ LeetCode problems and 160+ GeeksforGeeks problems covering core algorithms &amp; data structures.</li>
+                <li><strong>Research Report ("Attitude of Rising India"):</strong> Authored a 2,000-word research report on <em>Viksit Bharat @2047</em>; selected as a <strong>Top 10 entry</strong> for university presentation.</li>
+            </ul>
+        </section>
+
+        <!-- Currently Learning -->
+        <section class="section">
+            <h2 class="section-title">Currently Learning</h2>
+            <p class="summary-text">
+                PostgreSQL, MySQL, Linux/Ubuntu, test automation and API testing, CI/CD build pipelines, logging and telemetry, TypeScript, NestJS, AI/ML and AI output evaluation.
+            </p>
+        </section>
+    </main>
+
+</body>
+</html>

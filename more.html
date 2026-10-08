@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About – Abhinit Kumar | Software Engineer</title>
+    <meta name="description" content="Learn more about Abhinit Kumar, B.Tech IT student and Full-Stack Developer at University of Kalyani.">
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-transition"></div>
+    <div class="floating-shapes">
+        <div class="shape"></div><div class="shape"></div>
+        <div class="shape"></div><div class="shape"></div>
+    </div>
+    <div class="noise"></div>
+
+    <!-- Minimal Nav -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" title="Abhinit Kumar">
+                <img src="image.png" alt="Abhinit Kumar" class="nav-avatar">
+                <span class="nav-logo-text"><span class="logo-bracket">&lt;</span>AK<span class="logo-bracket">/&gt;</span></span>
+            </a>
+            <div class="nav-actions" style="margin-left:auto">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="index.html" class="btn btn-outline btn-sm" style="text-decoration:none">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="section" style="padding-top:120px">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// about me</span>
+                <h1 class="section-title">About Abhinit Kumar</h1>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        👋 Hi, I'm <strong>Abhinit Kumar</strong> — a B.Tech Information Technology student at the University of Kalyani (Expected: May 2027), passionate about building full-stack web applications that solve real problems.
+                    </p>
+                    <p>
+                        I work across the full stack — from <strong>React and Next.js frontends</strong> to <strong>Node.js/Express REST APIs</strong> and <strong>MongoDB/Firebase databases</strong>. My Hostel Meal Tracker is used daily by <strong>50+ hostel students</strong>, reducing manual tracking effort by ~80%.
+                    </p>
+                    <p>
+                        I actively practice <strong>Data Structures & Algorithms</strong> — 130+ LeetCode and 160+ GeeksforGeeks problems solved. I'm constantly improving my system design knowledge through real projects and coursework.
+                    </p>
+
+                    <h2 style="font-size:1.25rem;font-weight:700;color:var(--text);margin:2rem 0 1rem;">Technical Skills</h2>
+                    <ul id="skills-list">
+                        <li>JavaScript</li><li>React</li><li>Next.js</li>
+                        <li>Node.js</li><li>Express</li><li>MongoDB</li>
+                        <li>Firebase</li><li>Java</li><li>Python</li>
+                        <li>C++</li><li>C</li><li>HTML</li><li>CSS</li>
+                        <li>Git</li><li>Flutter</li><li>REST APIs</li>
+                        <li>DSA</li><li>OOP</li>
+                    </ul>
+
+                    <a href="index.html" id="back-link" style="margin-top:2rem">
+                        <i class="fas fa-arrow-left"></i> Back to Portfolio
+                    </a>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-info-card">
+                        <h3>Quick Info</h3>
+                        <ul class="info-list">
+                            <li><i class="fas fa-map-marker-alt"></i> West Bengal, India</li>
+                            <li><i class="fas fa-university"></i> University of Kalyani</li>
+                            <li><i class="fas fa-graduation-cap"></i> B.Tech IT &middot; GPA 7.8/10</li>
+                            <li><i class="fas fa-calendar"></i> Expected: May 2027</li>
+                            <li><i class="fas fa-envelope"></i> ak0978096@gmail.com</li>
+                            <li><i class="fas fa-briefcase"></i> Open to New Grad Roles</li>
+                        </ul>
+                        <div class="about-social-row">
+                            <a href="https://github.com/Abhi8790652" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/abhinit-kumar-406917220/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://x.com/ak0978096" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/abhi_7nit/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="mailto:ak0978096@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <style>
+        #skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem;
+            margin-bottom: 1.5rem;
+        }
+        #skills-list li {
+            background: var(--bg-alt);
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+            padding: .35rem .85rem;
+            border-radius: 8px;
+            font-size: .875rem;
+            font-weight: 500;
+            cursor: default;
+            transition: all .2s;
+        }
+        #skills-list li:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        #back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--accent);
+            padding: .6rem 1.25rem;
+            border-radius: 10px;
+            transition: all .2s;
+        }
+        #back-link:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+    </style>
+
+    <!-- ENLARGED PROFILE IMAGE PREVIEW MODAL -->
+    <div class="img-preview-overlay" id="imgPreviewOverlay">
+        <div class="img-preview-card">
+            <button class="img-preview-close" id="imgPreviewClose" aria-label="Close">&times;</button>
+            <div class="img-preview-wrap">
+                <img src="image.png" alt="Abhinit Kumar Profile" class="img-preview-img">
+            </div>
+            <h3 class="img-preview-name">Abhinit Kumar</h3>
+            <p class="img-preview-title">Software Engineer &amp; Full-Stack Developer</p>
+            <div class="img-preview-badge">
+                <i class="fas fa-circle"></i> Available for New Grad Roles
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

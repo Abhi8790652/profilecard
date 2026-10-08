@@ -3,77 +3,693 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Card</title>
+    <title>Abhinit Kumar – Software Engineer | Full-Stack Developer</title>
+    <meta name="description" content="Abhinit Kumar – Software Engineer (New Grad) and Full-Stack Developer. B.Tech IT student at University of Kalyani. Skilled in React, Next.js, Node.js, Express, MongoDB, Firebase.">
+    <meta name="keywords" content="Abhinit Kumar, Software Engineer, Full Stack Developer, React, Next.js, Node.js, MongoDB, Firebase, Portfolio">
+    <meta name="author" content="Abhinit Kumar">
+
+    <!-- Prevent FOUC -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="header_section">
-            <i class="fas fa-bars icon" title="Menu"></i>
-            <i class="fas fa-moon icon2" title="Toggle Dark Mode"></i>
-        </div>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
 
-        <!-- Menu Overlay -->
-        <div class="menu-overlay">
-            <div class="menu-content">
-                <div class="menu-header">
-                    <h3>My Projects</h3>
-                    <i class="fas fa-times close-menu"></i>
+    <!-- Background Elements -->
+    <div class="light-effect"></div>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="noise"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" title="Abhinit Kumar">
+                <img src="image.png" alt="Abhinit Kumar" class="nav-avatar">
+                <span class="nav-logo-text"><span class="logo-bracket">&lt;</span>AK<span class="logo-bracket">/&gt;</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#certifications" class="nav-link">Certs</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Available for New Grad Roles
                 </div>
-                <div class="menu-links">
-                    <div class="menu-section">
-                        <h4>Main Projects</h4>
-                        <a href="index.html" class="menu-link">
-                            <i class="fas fa-user"></i>
-                            Profile Card
-                        </a>
-                        <a href="ytport/index.html" class="menu-link">
-                            <i class="fas fa-briefcase"></i>
-                            Portfolio 2024
-                        </a>
+                <h1 class="hero-name">
+                    <span class="hero-name-line">Abhinit</span>
+                    <span class="hero-name-line accent">Kumar</span>
+                </h1>
+                <p class="hero-title">
+                    <span class="typed-text" id="typedText"></span><span class="typed-cursor">|</span>
+                </p>
+                <p class="hero-description">
+                    I build full-stack web applications using JavaScript, React, Next.js, Node.js, Express, MongoDB and Firebase. My apps are used by real users — including a meal tracker used daily by <strong>50+ hostel students</strong>.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary" id="view-projects-btn">
+                        <i class="fas fa-code"></i> View Projects
+                    </a>
+                    <a href="resume.html" target="_blank" class="btn btn-outline" id="download-resume-btn" title="View / Print Resume">
+                        <i class="fas fa-file-pdf"></i> Resume
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/Abhi8790652" target="_blank" rel="noopener" class="social-pill" aria-label="GitHub">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/abhinit-kumar-406917220/" target="_blank" rel="noopener" class="social-pill" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="mailto:ak0978096@gmail.com" class="social-pill" aria-label="Email">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3D Profile Card -->
+            <div class="hero-card-wrapper">
+                <div class="profile-card-3d" id="profileCard3d">
+                    <div class="card-3d-inner">
+                        <div class="card-glow"></div>
+                        <div class="card-light" id="cardLight"></div>
+                        <div class="card-3d-header">
+                            <div class="card-chip">
+                                <div class="chip-lines"><span></span><span></span><span></span></div>
+                            </div>
+                            <div class="card-type-label">SOFTWARE ENGINEER</div>
+                        </div>
+                        <div class="card-photo-wrapper">
+                            <div class="card-photo-ring"></div>
+                            <div class="card-photo">
+                                <img src="image.png" alt="Abhinit Kumar" id="cardPhoto" onerror="this.style.display='none'; document.getElementById('cardFallback').style.display='flex'">
+                                <div class="card-photo-fallback" id="cardFallback" style="display:none">AK</div>
+                            </div>
+                            <div class="card-status-dot" title="Open to work"></div>
+                        </div>
+                        <div class="card-3d-name">
+                            <h2>ABHINIT KUMAR</h2>
+                            <p class="card-3d-role">Full-Stack Developer</p>
+                        </div>
+                        <div class="card-3d-stack">
+                            <span>JavaScript</span><span>React</span><span>Next.js</span>
+                            <span>Node.js</span><span>MongoDB</span><span>Firebase</span>
+                        </div>
+                        <div class="card-3d-info">
+                            <div class="card-info-row">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>B.Tech IT &middot; University of Kalyani &middot; 2027</span>
+                            </div>
+                            <div class="card-info-row">
+                                <i class="fas fa-star"></i>
+                                <span>GPA: 7.8 / 10</span>
+                            </div>
+                        </div>
+                        <div class="card-3d-actions">
+                            <a href="https://github.com/Abhi8790652" target="_blank" rel="noopener" class="card-action-btn" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/abhinit-kumar-406917220/" target="_blank" rel="noopener" class="card-action-btn" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#projects" class="card-action-btn" aria-label="Portfolio">
+                                <i class="fas fa-briefcase"></i>
+                            </a>
+                        </div>
+                        <div class="card-shimmer"></div>
                     </div>
-                    <div class="menu-section">
-                        <h4>Portfolio 2025</h4>
-                        <a href="ytport/2025port/index.html" class="menu-link">
-                            <i class="fas fa-rocket"></i>
-                            Main Portfolio
-                        </a>
-                        <a href="ytport/2025port/coff/coff/project.html" class="menu-link">
-                            <i class="fas fa-coffee"></i>
-                            Coffee Shop
-                        </a>
-                        <a href="ytport/2025port/atm/index.html" class="menu-link">
-                            <i class="fas fa-money-bill-wave"></i>
-                            ATM System
-                        </a>
-                        <a href="ytport/2025port/sizereducer/index.html" class="menu-link">
-                            <i class="fas fa-compress-arrows-alt"></i>
-                            Size Reducer
-                        </a>
+                </div>
+                <div class="card-particle p1"></div>
+                <div class="card-particle p2"></div>
+                <div class="card-particle p3"></div>
+                <div class="card-particle p4"></div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+            <div class="scroll-wheel"></div>
+        </a>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats-section" id="stats">
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-card" data-count="7.8" data-suffix="/10" data-decimal="1">
+                    <div class="stat-icon"><i class="fas fa-star"></i></div>
+                    <div class="stat-number"><span class="counter">0</span><span class="stat-suffix">/10</span></div>
+                    <div class="stat-label">GPA</div>
+                </div>
+                <div class="stat-card" data-count="130" data-suffix="+">
+                    <div class="stat-icon"><i class="fas fa-code"></i></div>
+                    <div class="stat-number"><span class="counter">0</span><span class="stat-suffix">+</span></div>
+                    <div class="stat-label">LeetCode Problems</div>
+                </div>
+                <div class="stat-card" data-count="160" data-suffix="+">
+                    <div class="stat-icon"><i class="fas fa-terminal"></i></div>
+                    <div class="stat-number"><span class="counter">0</span><span class="stat-suffix">+</span></div>
+                    <div class="stat-label">GeeksforGeeks Problems</div>
+                </div>
+                <div class="stat-card" data-count="50" data-suffix="+">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-number"><span class="counter">0</span><span class="stat-suffix">+</span></div>
+                    <div class="stat-label">Daily Meal Tracker Users</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// about me</span>
+                <h2 class="section-title">Who I Am</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I'm a <strong>B.Tech Information Technology</strong> student at the University of Kalyani (Expected: May 2027), passionate about building full-stack web applications that solve real problems.</p>
+                    <p>My work spans <strong>React and Next.js frontends</strong>, <strong>Node.js/Express REST APIs</strong>, and <strong>MongoDB/Firebase databases</strong>. I've shipped production software — my Hostel Meal Tracker is used daily by <strong>50+ students</strong>, reducing manual tracking effort by ~80%.</p>
+                    <p>I actively practice <strong>Data Structures &amp; Algorithms</strong> on LeetCode and GeeksforGeeks, and I'm constantly improving my system design knowledge through real projects.</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item"><i class="fas fa-rocket"></i><span>Full-Stack Web Development</span></div>
+                        <div class="highlight-item"><i class="fas fa-database"></i><span>REST API &amp; Database Design</span></div>
+                        <div class="highlight-item"><i class="fas fa-cogs"></i><span>Automation &amp; Tooling</span></div>
+                        <div class="highlight-item"><i class="fas fa-chart-line"></i><span>DSA &amp; Problem Solving</span></div>
+                    </div>
+                </div>
+                <div class="about-card">
+                    <div class="about-info-card">
+                        <h3>Quick Info</h3>
+                        <ul class="info-list">
+                            <li><i class="fas fa-map-marker-alt"></i> West Bengal, India</li>
+                            <li><i class="fas fa-university"></i> University of Kalyani</li>
+                            <li><i class="fas fa-graduation-cap"></i> B.Tech IT &middot; GPA 7.8/10</li>
+                            <li><i class="fas fa-calendar"></i> Expected: May 2027</li>
+                            <li><i class="fas fa-envelope"></i> ak0978096@gmail.com</li>
+                            <li><i class="fas fa-briefcase"></i> Open to New Grad Roles</li>
+                        </ul>
+                        <div class="about-social-row">
+                            <a href="https://github.com/Abhi8790652" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/abhinit-kumar-406917220/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://x.com/ak0978096" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/abhi_7nit/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/6202058658" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="image_section">
-            <img src="image.jpg" alt="Profile Image">
-        </div>
-
-        <div class="info_section">
-            <h2>Kumar Abhinit</h2>
-            <p>Web Developer</p>
-            <p>Location: Kalyani, India</p>
-            <div class="social-links">
-                <a href="https://github.com/Abhi8790652" target="_blank" rel="noopener" class="social-icon">GitHub</a>
-                <a href="https://www.linkedin.com/in/abhinit-kumar-406917220/" target="_blank" rel="noopener" class="social-icon">LinkedIn</a>
+    <!-- SKILLS SECTION -->
+    <section class="section section-alt" id="skills">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// technical skills</span>
+                <h2 class="section-title">What I Work With</h2>
             </div>
-            <a href="ytport/index.html" class="profile_link">View Portfolio</a>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-cat-header"><i class="fas fa-code"></i><h3>Languages</h3></div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span><span class="skill-tag">C</span><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-header"><i class="fas fa-layer-group"></i><h3>Frontend</h3></div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span><span class="skill-tag">Next.js</span><span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Progressive Web Apps</span><span class="skill-tag">Responsive UI</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-header"><i class="fas fa-server"></i><h3>Backend &amp; APIs</h3></div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span><span class="skill-tag">Express</span><span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Firebase Auth</span><span class="skill-tag">Google Apps Script</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-header"><i class="fas fa-database"></i><h3>Databases</h3></div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MongoDB</span><span class="skill-tag">Mongoose</span><span class="skill-tag">MongoDB Atlas</span>
+                        <span class="skill-tag">Cloud Firestore</span><span class="skill-tag">Relational DB Concepts</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-header"><i class="fas fa-brain"></i><h3>Fundamentals</h3></div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">DSA</span><span class="skill-tag">OOP</span><span class="skill-tag">Operating Systems</span>
+                        <span class="skill-tag">Computer Networks</span><span class="skill-tag">DBMS</span><span class="skill-tag">System Modeling</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-header"><i class="fas fa-tools"></i><h3>Tools</h3></div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">npm</span><span class="skill-tag">Flutter</span><span class="skill-tag">Notion</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section" id="projects">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// projects</span>
+                <h2 class="section-title">What I've Built</h2>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+
+                <div class="project-card featured">
+                    <div class="project-card-header">
+                        <div class="project-folder-icon"><i class="fas fa-folder-open"></i></div>
+                        <div class="project-links-top">
+                            <a href="https://meal-production-f164.up.railway.app/" target="_blank" rel="noopener" class="project-icon-link" title="Live Demo" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-icon-link" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-badge">Featured &middot; 50+ Daily Users</div>
+                    <h3 class="project-title">Hostel Meal ON/OFF Tracker</h3>
+                    <p class="project-description">Real-time full-stack meal tracking PWA used daily by 50+ hostel students. Automated ON/OFF meal logging across 3 daily sessions, ~80% reduction in manual effort. Features status dashboard, push notifications, PWA offline support, and dark mode.</p>
+                    <div class="project-tags"><span>React</span><span>Firebase Auth</span><span>Cloud Firestore</span><span>PWA</span><span>JavaScript</span></div>
+                    <div class="project-actions">
+                        <a href="https://meal-production-f164.up.railway.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm" id="meal-tracker-demo">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-folder-icon"><i class="fas fa-folder-open"></i></div>
+                        <div class="project-links-top">
+                            <a href="https://loan-flow-ashy.vercel.app/" target="_blank" rel="noopener" class="project-icon-link" title="Live Demo" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://loan-flow-ashy.vercel.app/" target="_blank" rel="noopener" class="project-icon-link" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">LoanFlow / Zetheta WorkBridge</h3>
+                    <p class="project-description">Web-based loan and workflow management platform. Next.js frontend, Express/Node.js REST API backend, MongoDB integration with Mongoose, and full deployment configuration.</p>
+                    <div class="project-tags"><span>Next.js</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Mongoose</span><span>REST API</span></div>
+                    <div class="project-actions">
+                        <a href="https://loan-flow-ashy.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-folder-icon"><i class="fas fa-folder-open"></i></div>
+                        <div class="project-links-top"><span class="project-status-badge ongoing">Ongoing</span></div>
+                    </div>
+                    <h3 class="project-title">Digital Twin – Water Tank Level Simulation</h3>
+                    <p class="project-description">Software-only Digital Twin simulating a water-tank system. Virtual representation of system state with level monitoring, dynamic state updates, and real-time-style visualization.</p>
+                    <div class="project-tags"><span>Software Simulation</span><span>System Modeling</span><span>Visualization</span></div>
+                    <div class="project-actions"><span class="badge-in-progress"><i class="fas fa-clock"></i> In Progress</span></div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-folder-icon"><i class="fas fa-folder-open"></i></div>
+                        <div class="project-links-top">
+                            <a href="./ytport/2025port/atm/index.html" target="_blank" class="project-icon-link" title="Demo" aria-label="Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Bank &amp; ATM Management System</h3>
+                    <p class="project-description">File-based CLI banking application with account registration, deposits, withdrawals, and money transfers. Built with OOP principles, file handling, and password protection.</p>
+                    <div class="project-tags"><span>C++</span><span>OOP</span><span>File Handling</span></div>
+                    <div class="project-actions">
+                        <a href="./ytport/2025port/atm/index.html" target="_blank" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-folder-icon"><i class="fas fa-folder-open"></i></div>
+                        <div class="project-links-top"><span class="project-status-badge ongoing">Ongoing</span></div>
+                    </div>
+                    <h3 class="project-title">DSA Learning Challenge App</h3>
+                    <p class="project-description">Gamified DSA learning platform built with Flutter and Firebase. Features practice challenges and progress tracking to make algorithm learning engaging.</p>
+                    <div class="project-tags"><span>Flutter</span><span>Firebase</span></div>
+                    <div class="project-actions"><span class="badge-in-progress"><i class="fas fa-clock"></i> In Progress</span></div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-folder-icon"><i class="fas fa-folder-open"></i></div>
+                        <div class="project-links-top">
+                            <a href="./index.html" class="project-icon-link" title="Demo" aria-label="Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Portfolio / Profile Card &amp; Fashion E-Commerce</h3>
+                    <p class="project-description">Personal portfolio and profile card with dark mode, animated project showcase, and page transitions. Includes fashion e-commerce UI built with Next.js.</p>
+                    <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Next.js</span></div>
+                    <div class="project-actions">
+                        <a href="./index.html" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> View</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="section section-alt" id="experience">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// experience</span>
+                <h2 class="section-title">Work Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Campus Project Developer – Automation Tools</h3>
+                                <p class="timeline-company"><i class="fas fa-building"></i> University of Kalyani</p>
+                            </div>
+                            <div class="timeline-date">
+                                <span><i class="fas fa-calendar"></i> Jan 2025 – Present</span>
+                            </div>
+                        </div>
+                        <ul class="timeline-points">
+                            <li>Built HTML Forms + Google Sheets workflow system for hostel administration</li>
+                            <li>Automated hostel meal ON/OFF tracking for 60+ students using Google Apps Script</li>
+                            <li>Implemented real-time dashboard updates and session-level meal summaries</li>
+                            <li>Significantly reduced manual administrative work through automation</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Google Apps Script</span><span>HTML Forms</span><span>Google Sheets</span><span>Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="section" id="education">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// education</span>
+                <h2 class="section-title">Academic Background</h2>
+            </div>
+            <div class="education-card">
+                <div class="edu-icon-wrapper"><i class="fas fa-university"></i></div>
+                <div class="edu-content">
+                    <div class="edu-header">
+                        <div>
+                            <h3>B.Tech, Information Technology</h3>
+                            <p class="edu-institution">University of Kalyani, West Bengal</p>
+                        </div>
+                        <div class="edu-meta">
+                            <span class="edu-date"><i class="fas fa-calendar"></i> Aug 2023 – May 2027 (Expected)</span>
+                            <span class="edu-gpa"><i class="fas fa-star"></i> GPA: 7.8 / 10</span>
+                        </div>
+                    </div>
+                    <div class="edu-coursework">
+                        <h4>Relevant Coursework</h4>
+                        <div class="coursework-tags">
+                            <span>Data Structures &amp; Algorithms</span><span>OOP in C++</span><span>DBMS</span>
+                            <span>Operating Systems</span><span>Computer Networks</span><span>Web Development</span><span>Discrete Mathematics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section class="section section-alt" id="achievements">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// achievements</span>
+                <h2 class="section-title">Highlights</h2>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon dsa"><i class="fas fa-code"></i></div>
+                    <div class="achievement-content">
+                        <h3>130+ LeetCode Problems</h3>
+                        <p>Solved 130+ problems on LeetCode, strengthening algorithmic thinking across arrays, trees, graphs, and dynamic programming.</p>
+                        <a href="https://leetcode.com/" target="_blank" rel="noopener" class="achievement-link">View Profile <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon gfg"><i class="fas fa-terminal"></i></div>
+                    <div class="achievement-content">
+                        <h3>160+ GeeksforGeeks Problems</h3>
+                        <p>Solved 160+ problems on GeeksforGeeks, covering DSA fundamentals, OOP concepts, and competitive programming patterns.</p>
+                        <a href="https://www.geeksforgeeks.org/" target="_blank" rel="noopener" class="achievement-link">View Profile <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon research"><i class="fas fa-file-alt"></i></div>
+                    <div class="achievement-content">
+                        <h3>Research: "Attitude of Rising India"</h3>
+                        <p>Authored a 2,000-word research report on <em>Viksit Bharat @2047</em>. Selected as a <strong>Top 10 entry</strong> for university presentation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEARNING SECTION -->
+    <section class="section" id="learning">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// next skills</span>
+                <h2 class="section-title">Currently Learning</h2>
+                <p class="section-subtitle">Areas I am actively studying — not existing professional expertise.</p>
+            </div>
+            <div class="learning-grid">
+                <div class="learning-item"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+                <div class="learning-item"><i class="fas fa-database"></i><span>MySQL</span></div>
+                <div class="learning-item"><i class="fab fa-linux"></i><span>Linux / Ubuntu</span></div>
+                <div class="learning-item"><i class="fas fa-vial"></i><span>Test Automation</span></div>
+                <div class="learning-item"><i class="fas fa-flask"></i><span>API Testing</span></div>
+                <div class="learning-item"><i class="fas fa-infinity"></i><span>CI/CD Pipelines</span></div>
+                <div class="learning-item"><i class="fas fa-chart-bar"></i><span>Logging &amp; Telemetry</span></div>
+                <div class="learning-item"><i class="fas fa-code"></i><span>TypeScript</span></div>
+                <div class="learning-item"><i class="fas fa-layer-group"></i><span>NestJS</span></div>
+                <div class="learning-item"><i class="fas fa-robot"></i><span>AI / ML Basics</span></div>
+                <div class="learning-item"><i class="fas fa-clipboard-check"></i><span>AI Output Evaluation</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section class="section section-alt" id="certifications">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// certifications</span>
+                <h2 class="section-title">Certifications</h2>
+                <p class="section-subtitle">Verified credentials and course completions.</p>
+            </div>
+            <div class="cert-grid">
+
+                <!-- Cert Card 1 -->
+                <div class="cert-card" id="cert-1">
+                    <div class="cert-card-inner">
+                        <div class="cert-ribbon">Verified</div>
+                        <div class="cert-logo-wrap">
+                            <div class="cert-logo-icon" style="background: linear-gradient(135deg,#f7971e,#ffd200)">
+                                <i class="fas fa-fire-alt"></i>
+                            </div>
+                        </div>
+                        <div class="cert-body">
+                            <h3 class="cert-title">Add Your Certification</h3>
+                            <p class="cert-issuer"><i class="fas fa-building"></i> Issuing Organization</p>
+                            <p class="cert-date"><i class="fas fa-calendar-check"></i> Month Year</p>
+                            <p class="cert-desc">Brief description of what this certification covers and what skills it validates.</p>
+                        </div>
+                        <div class="cert-footer">
+                            <a href="#" class="cert-verify-btn" target="_blank" rel="noopener">
+                                <i class="fas fa-external-link-alt"></i> Verify
+                            </a>
+                            <span class="cert-badge">Certificate</span>
+                        </div>
+                        <div class="cert-shimmer"></div>
+                    </div>
+                </div>
+
+                <!-- Cert Card 2 -->
+                <div class="cert-card" id="cert-2">
+                    <div class="cert-card-inner">
+                        <div class="cert-ribbon">Verified</div>
+                        <div class="cert-logo-wrap">
+                            <div class="cert-logo-icon" style="background: linear-gradient(135deg,#11998e,#38ef7d)">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                        <div class="cert-body">
+                            <h3 class="cert-title">Add Your Certification</h3>
+                            <p class="cert-issuer"><i class="fas fa-building"></i> Issuing Organization</p>
+                            <p class="cert-date"><i class="fas fa-calendar-check"></i> Month Year</p>
+                            <p class="cert-desc">Brief description of what this certification covers and what skills it validates.</p>
+                        </div>
+                        <div class="cert-footer">
+                            <a href="#" class="cert-verify-btn" target="_blank" rel="noopener">
+                                <i class="fas fa-external-link-alt"></i> Verify
+                            </a>
+                            <span class="cert-badge">Certificate</span>
+                        </div>
+                        <div class="cert-shimmer"></div>
+                    </div>
+                </div>
+
+                <!-- Cert Card 3 -->
+                <div class="cert-card" id="cert-3">
+                    <div class="cert-card-inner">
+                        <div class="cert-ribbon">Verified</div>
+                        <div class="cert-logo-wrap">
+                            <div class="cert-logo-icon" style="background: linear-gradient(135deg,#6a3093,#a044ff)">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                        </div>
+                        <div class="cert-body">
+                            <h3 class="cert-title">Add Your Certification</h3>
+                            <p class="cert-issuer"><i class="fas fa-building"></i> Issuing Organization</p>
+                            <p class="cert-date"><i class="fas fa-calendar-check"></i> Month Year</p>
+                            <p class="cert-desc">Brief description of what this certification covers and what skills it validates.</p>
+                        </div>
+                        <div class="cert-footer">
+                            <a href="#" class="cert-verify-btn" target="_blank" rel="noopener">
+                                <i class="fas fa-external-link-alt"></i> Verify
+                            </a>
+                            <span class="cert-badge">Certificate</span>
+                        </div>
+                        <div class="cert-shimmer"></div>
+                    </div>
+                </div>
+
+                <!-- Add More Cert placeholder -->
+                <div class="cert-card cert-add-card" id="cert-add">
+                    <div class="cert-card-inner cert-add-inner">
+                        <i class="fas fa-plus-circle"></i>
+                        <p>Add more certifications<br><span>Edit index.html &rarr; #certifications</span></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section section-alt" id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// contact</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">I'm open to internships, new grad roles, and collaboration opportunities.</p>
+            </div>
+            <div class="contact-grid">
+                <a href="mailto:ak0978096@gmail.com" class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Email</h3>
+                    <p>ak0978096@gmail.com</p>
+                </a>
+                <a href="https://www.linkedin.com/in/abhinit-kumar-406917220/" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                    <h3>LinkedIn</h3>
+                    <p>abhinit-kumar-406917220</p>
+                </a>
+                <a href="https://github.com/Abhi8790652" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-icon"><i class="fab fa-github"></i></div>
+                    <h3>GitHub</h3>
+                    <p>Abhi8790652</p>
+                </a>
+                <div class="contact-card no-link">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Location</h3>
+                    <p>West Bengal, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p class="footer-name"><span class="logo-bracket">&lt;</span>AK<span class="logo-bracket">/&gt;</span></p>
+            <p class="footer-copy">&copy; 2025 Abhinit Kumar. Built with HTML, CSS &amp; JavaScript.</p>
+            <div class="footer-links">
+                <a href="https://github.com/Abhi8790652" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/abhinit-kumar-406917220/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:ak0978096@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Floating toys (preserved from original) -->
+    <div class="floating-toys">
+        <div class="toy"></div>
+        <div class="toy"></div>
+        <div class="toy"></div>
+        <div class="toy"></div>
+    </div>
+
+    <!-- ENLARGED PROFILE IMAGE PREVIEW MODAL -->
+    <div class="img-preview-overlay" id="imgPreviewOverlay">
+        <div class="img-preview-card">
+            <button class="img-preview-close" id="imgPreviewClose" aria-label="Close">&times;</button>
+            <div class="img-preview-wrap">
+                <img src="image.png" alt="Abhinit Kumar Profile" class="img-preview-img">
+            </div>
+            <h3 class="img-preview-name">Abhinit Kumar</h3>
+            <p class="img-preview-title">Software Engineer &amp; Full-Stack Developer</p>
+            <div class="img-preview-badge">
+                <i class="fas fa-circle"></i> Available for New Grad Roles
+            </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

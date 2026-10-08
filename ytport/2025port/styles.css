@@ -4,14 +4,16 @@
     margin: 0;
     padding: 0;
     transition: background 0.3s, color 0.3s;
+    background: #ffffff;
+    color: #333333;
 }
 
 /* Navbar Styling */
 .navbar {
-    background: linear-gradient(135deg, #1e1e1e, #333);
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
     padding: 15px;
     transition: background 0.3s;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Navbar Brand */
@@ -19,103 +21,33 @@
     font-size: 1.6rem;
     letter-spacing: 1px;
     transition: color 0.3s;
+    color: #333333;
 }
 
 .navbar-brand:hover {
-    color: #f39c12 !important;
+    color: #007bff !important;
 }
 
 /* Navbar Links */
 .navbar-nav .nav-link {
     font-size: 1.1rem;
     padding: 10px;
-    color: #ffffff;
+    color: #333333;
     transition: color 0.3s ease-in-out;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #f39c12 !important;
+    color: #007bff !important;
     text-decoration: underline;
-}
-
-/* Dark Mode */
-.dark-mode {
-    background: #121212;
-    color: #fff;
-}
-
-.dark-mode .navbar {
-    background: #222 !important;
-}
-
-.dark-mode .navbar-nav .nav-link {
-    color: #ddd !important;
-}
-
-.dark-mode .navbar-nav .nav-link:hover {
-    color: #f39c12 !important;
-}
-
-/* Dark Mode Button */
-#darkModeToggle {
-    font-size: 1.2rem;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s, transform 0.2s;
-}
-
-#darkModeToggle:hover {
-    transform: rotate(20deg);
-    background: #f39c12;
-    color: white;
 }
 
 /* Content Section */
 .content {
     padding: 100px 10%;
     text-align: center;
+    background: #ffffff;
 }
 
-.hero {
-    background: url('hero-bg.jpg') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-.hero h1 {
-    font-size: 3rem;
-    font-weight: bold;
-}
-.card img {
-    height: 200px;
-    object-fit: cover;
-}
-
-.footer {
-    background-color: #112240;
-}
-
-/* Dark Mode */
-.dark-mode {
-    background: #1E293B;
-    color: rgb(255, 255, 255);
-}
-/* Animations */
-.animate {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease-in-out;
-}
-.animate.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 .hero {
     background: url('my\ photo.jpg') no-repeat center center/cover;
     height: 100vh;
@@ -130,10 +62,9 @@
 /* Hover effect to scale the background */
 .hero:hover {
     background-size: 110%;
-     /* Zoom in the image */
 }
 
-/* Add a dark overlay to improve text visibility */
+/* Add a light overlay to improve text visibility */
 .hero::before {
     content: "";
     position: absolute;
@@ -141,20 +72,49 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background: rgba(255, 255, 255, 0.3); /* Light overlay */
 }
 
 /* Ensures text is visible */
 .hero .container {
     position: relative;
     z-index: 2;
+    color: #333333;
 }
+
 #about:hover {
-    background-color: #334E68; /* Darker background for hover */
-    color: #FFDD57; /* Change text color */
-    transform: translateY(-5px); /* Slight lift on hover */
-    transition: all 0.3s ease; /* Smooth transition */
+    background-color: #f8f9fa;
+    color: #007bff;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
 }
+
+/* Footer */
+.footer {
+    background-color: #f8f9fa;
+    color: #333333;
+}
+
+/* Dark Mode Button */
+#darkModeToggle {
+    font-size: 1.2rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.2s;
+    background: #f8f9fa;
+    color: #333333;
+}
+
+#darkModeToggle:hover {
+    transform: rotate(20deg);
+    background: #007bff;
+    color: white;
+}
+
 /* Blog Image Styling */
 #blog img {
     width: 100%;
@@ -189,6 +149,7 @@
 .btn-primary:hover {
     background-color: #0056b3; /* Darken the button on hover */
 }
+
 /* Social Media Section */
 #social-media {
     background-color: #f9f9f9;
@@ -209,9 +170,11 @@
 #social-media .social-icon:hover {
     transform: scale(1.2);
 }
+
 .text-center mb-4{
     hover: auto;
 }
+
 /* Skills Section */
 /* Skills Section */
 #skills {
