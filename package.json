@@ -1,0 +1,13 @@
+{
+  "name": "profilecard",
+  "version": "1.0.0",
+  "description": "Abhinit Kumar Portfolio Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y serve . -p $PORT",
+    "build": "echo 'Build complete'"
+  },
+  "keywords": [],
+  "author": "Abhinit Kumar",
+  "license": "ISC"
+}
